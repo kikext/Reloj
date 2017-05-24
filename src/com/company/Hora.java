@@ -7,28 +7,21 @@ public class Hora {
     protected int hora;
     protected int minuto;
 
+
+
     public Hora(int hora, int minuto) {
-        this.hora = 0;
-        this.minuto = 0;
-        setHora(hora);
-        setMinuto(minuto);
+        this.hora = hora;
+        this.minuto = minuto;
 
-    }
-
-    public int getHora() {
-        return hora;
     }
 
     public void setHora(int hora) {
+        if(hora>=0 && hora<24)
         this.hora = hora;
     }
 
-    public int getMinuto() {
-        return minuto;
-    }
-
     public void setMinuto(int minuto) {
-
+        if(minuto<=59 && minuto<=0)
         this.minuto = minuto;
 
     }
@@ -36,19 +29,19 @@ public class Hora {
     public void inc(){
         minuto++;
         if(minuto>59){
+            minuto=0;
             hora++;
-            minuto=00;
-        }if(hora>23){
-            hora = 00;
+            if (hora>23)
+                    hora=0;
         }
     }
 
 
-    @Override
-    public String toString() {
-        return "Hora{" +
-                "hora=" + hora +
-                ", minuto=" + minuto +
-                '}';
-    }
+  @Override
+   public String toString() {
+      return "Hora{" +
+               "hora=" + hora +
+             ", minuto=" + minuto +
+               '}';
+   }
 }
