@@ -30,7 +30,9 @@ public class Hora {
         minuto++;
         if(minuto>59){
             minuto=0;
-            hora++;
+
+
+
             if (hora>23)
                     hora=0;
         }
